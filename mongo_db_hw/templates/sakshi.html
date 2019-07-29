@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<title> Sakshi's Resume in json format </title>
+
+
+<body>
+
+
+<h3> Sakshi Salokhe: {</h3>
+	{% for key, value in data.items() %}
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>{{ key }} : <br/>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</b> </p>
+			<ul>
+			{% if value is string %}
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ value }} </p> </li>
+			{% else %}
+				{% for i in value %}
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ i }} </p> </li>
+				{% endfor %}
+			{% endif %}
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>}</b>
+		<br/>
+		</ul>
+	{% endfor %}
+<h3> } </h3>
+<!--{{data}}-->
+
+</body>
+</html>
